@@ -1,0 +1,18 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Name of Book </th>
+                <th> Author </th>
+                <th> Price </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let book of books">
+                <td>{{book.name}} </td>
+                <td>{{book.author}} </td>
+                <td>{{book.price | currency:'INR'}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

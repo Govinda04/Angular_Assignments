@@ -1,0 +1,37 @@
+<div class="container">
+    <app-admin></app-admin>
+
+    <div class="container p-3" style="border: 1px solid grey; border-radius: 5px; margin-top: 30px;padding-bottom: 20px;margin-left: -10px;">
+    <h4>User component</h4><br>
+    <button class="btn btn-warning" (click)='setFlag()'>{{flag ? 'Hide User': 'Show User'}}</button>
+    <br><br>
+    <table class="table" *ngIf = 'flag'>
+        <tr>
+            <td>
+                User Name:
+            </td>
+            <td>
+                {{uName}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                User Mail:
+            </td>
+            <td>
+                {{uMail}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                User Phone:
+            </td>
+            <td>
+                {{uPhone}}
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+</div>

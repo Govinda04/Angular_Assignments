@@ -1,0 +1,37 @@
+<div class="container row m-2 p-2" style="border: 1px solid rgba(206, 94, 94, 0.637); border-radius: 5px; margin-top: 30px;">
+    <h4>Admin Component</h4>
+    <div class="col-md-4">
+    <div class="container">
+        <form>
+            <div class="form-group row">
+                <label for="userName" class="col-sm-2 col-form-label">Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="userName" id="userName" placeholder="Enter Name"
+                    [(ngModel)]="UserName" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="userMail" class="col-sm-2 col-form-label">Mail:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="userMail" id="userMail" placeholder="Enter Mail"
+                    [(ngModel)]="UserMail" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="userPhone" class="col-sm-2 col-form-label">Phone:</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="userPhone" id="userPhone" placeholder="Enter Phone"
+                    [(ngModel)]="UserPhone" >
+                </div>
+            </div>
+
+            <button type="submit" (click) = "addUser()" class="btn btn-success col-md-offset-3 col-md-2">Submit</button>
+            <button type="reset" class="btn btn-secondary col-md-offset-2 col-md-2">Reset</button>
+        </form>
+        <br>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+            

@@ -1,0 +1,19 @@
+<form >
+    <div class="form-group" [class.has-error]="userid.invalid && userid.touched">
+      <label for="uid" class="control-label">User Id:</label>
+      <input type="text" name="uid" id="uid" class="form-control" placeholder="Enter your ID" [(ngModel)]="UserID" #userid="ngModel" required>
+      <div class="alert alert-danger" role="alert" *ngIf="userid.invalid && userid.touched">
+        <p class="mb-0">User Id is required</p>
+      </div>
+    </div>
+    <div class="form-group" [class.has-error]="password.invalid && password.touched">
+      <label for="password" class="control-label">Password:</label>
+      <input type="password" class="form-control" name="password" id="password" placeholder="********" [(ngModel)]="Password" #password="ngModel" minlength="8" required>
+      <div class="alert alert-danger" role="alert" *ngIf="password.invalid && password.touched">
+        <p class="mb-0">Length of Password must be greater than 8</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success ">Submit</button>&nbsp;&nbsp;
+    <button type="reset" class="btn btn-primary ">Reset</button>
+</form>
