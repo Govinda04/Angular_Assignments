@@ -1,0 +1,53 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center"> -->
+
+<div class="container" style="margin-top: 1.3em;">
+    
+    <div class="jumbotron ">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="text-primary panel-title" style="text-align:center; font-size: 1.6em; padding: 0.3em">
+                    <b> Check when file was created respect to perticular date <i>using moment.js librery</i></b>
+                </h2> 
+            </div>
+            
+            <div class="container form-inline panel-body">
+                <div class="panel-body">
+                    <label for="iBox">Enter Your Date: &nbsp;</label>
+                    <input id="iBox" class="form-control" type="date" [(ngModel)]="userDate" >&nbsp;
+                    <button type="button" class="btn btn-info" (click)="getDate()">Click</button>
+                    <br>
+                    <h1 *ngIf="a"> {{'Your Are \'' + a + '\' old'}} </h1>
+
+                    
+                    <div class="container table-responsive">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let file of files">
+                                    <td> {{file.id}} </td>
+                                    <td><i class="fa fa-file-text" aria-hidden="true"></i>
+                                        {{file.name}} 
+                                    </td>
+                                    <td> {{file.type}} </td>
+                                    <td> {{file.size}} </td>
+                                    <td> {{file.date | calcAge:userDate}} </td>
+                                    <!-- <td> {{file.date}} </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
