@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Github API</title>
+    <!----Bootstrap CSS online------>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+    <style>
+    img{
+        height: 300px;
+        width: auto;
+    }
+    #repos{
+        margin: 4px;
+        padding: 4px;
+    }
+    .container{
+        box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+        margin-top: 25px;
+    }
+    .m{
+        margin: 4px;
+    }
+    h2{
+        margin-top: 0px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Simple Git API Webapp</h1>
+                Please enter the Github username to get profile
+                <input type="text" name="name" id="input_uname" class="form-control" required="required"><br>
+                <a type="button" class="btn btn-success" href="#" id="get_name">Get User Profile </a><br><br>
+
+                <div id="git" class="row"></div>
+
+                <div id="repos">
+                    
+                </div>
+            </div>  
+        </div>
+        
+    </div>
+    
+<!-- -----------------------------------------------------AJAX------------------------------------ -->
+    <script>
+            $("#get_name").click(function (e) {
+                e.preventDefault();
+                $("#git").html("");
+                $("#repos").html("");
+
+                var username = $("#input_uname").val();
+                var url = "https://api.github.com/users/"+ username ;
+                var repos = url + "/repos";
+                var name = "<div class='col-md-8'>";
+
+                $.getJSON(url, function(data){
+                    var dp = "<div class='col-md-4'><img class='img-thumbnail' src=\"" + data.avatar_url + "\" ></div>";
+                    name = name + '<h2>'+data.name+' <span class="smallname">(@<a href="'+data.html_url+'" target="_blank">'+data.login+'</a>)</span></h2>'
+                    name = name + "<h3>Username : " + data.login +"<br> User Id : "+ data.id +"<br>Followers : "+ data.followers +"<br>Following : "+ data.following + "</h3></div>";
+                    
+                    $("#git").append(dp);
+                    $("#git").append(name);
+                    // $("#repos").append(print);
+                });
+                console.log(repos);
+                $.getJSON(repos, function(data){                    
+                    var print="";
+                    var print = print +'<h3>Repository List : </h3><div> ';
+                    // $("#repos1").html(test);
+                    for(var i=0; i<data.length; i++ )
+                    {                    
+                        print = print +"<button type='button' class='btn btn-primary m' href='" + data[i].html_url + "' target='_blank'>"+ data[i].name + "</button>";
+                        // print = print + data[i].html_url + "  && "+ data[i].name + "<br>";
+                        $("#repos").html(print);
+
+                    }
+                    print = print + "</div>";
+                    $("repos").html(print);
+                    // $("#repos").html(dp);
+                });
+
+
+
+                
+
+                // requestJSON(url, function(json) {
+                // if(json.message == "Not Found" || username == '') {
+                //     $('#git').html("<h2>No User Info Found</h2>");
+                // }});
+
+                // $.ajax({
+                //     type: "GET",
+                //     url: "url",
+                //     dataType: "JSON",
+                //     success: function (response) {
+                //         var resp = JSON.stringify(response);
+                //         console.log(resp);
+                        
+                //     }
+                // });
+            });
+        </script>
+    
+</body>
+</html>
