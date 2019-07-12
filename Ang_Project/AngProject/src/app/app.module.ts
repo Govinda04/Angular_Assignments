@@ -8,6 +8,8 @@ import { UserComponent } from './user/user.component';
 import { GithubComponent } from './github/github.component';
 import { NotFoundComponent } from './shared/notFound.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HomeComponent } from './home/home.component';
     UserComponent,
     NotFoundComponent,
     GithubComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,7 @@ import { HomeComponent } from './home/home.component';
       {path: 'home', component: HomeComponent},
       {path: 'user', component: UserComponent},
       {path: 'github', component: GithubComponent},
+      {path: 'login', component: LoginComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', component: NotFoundComponent},
 

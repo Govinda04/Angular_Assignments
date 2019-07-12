@@ -18,15 +18,8 @@
         <li><a [routerLink]="['/github']" >Github</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{User}} <i class="fa fa-user fa-lg" aria-hidden="true"></i><b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#"><i class="fas fa-user-plus fa-lg fa-fw" aria-hidden="true"></i> &nbsp;Add Contact  </a></li>
-            <li><a href="#"><i class="fas fa-heart fa-lg fa-fw" aria-hidden="true"></i> &nbsp;Favorites</a></li>
-            <li><a href="#"><i class="fas fa-sign-out-alt fa-lg fa-fw"></i> &nbsp;Sign Out</a></li>
-          </ul>
-        </li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a [routerLink]="['/login']" routerLinkActive="router-link-active" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
