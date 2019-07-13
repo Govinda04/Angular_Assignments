@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginModel } from './login1.model';
+import { LoginModal } from './login.model';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  myModel = new LoginModel('John', 'abd12345');
+  myModel = new LoginModal('John', 'abd12345');
 
   constructor() { }
 
