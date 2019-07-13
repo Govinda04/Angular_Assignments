@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 
 export class LoginComponent {
 
-    mymodel = new LoginModal('j@gmail.com', '12345678');
+    mymodel = new LoginModal('', '');
 
     constructor() {}
 
