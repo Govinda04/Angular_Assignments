@@ -10,7 +10,7 @@
       </button>
       <a class="navbar-brand active" [routerLink]="['/home']" >
         <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-        CMS
+        <b>CMS</b>s
       </a>          
     </div>
   
@@ -28,61 +28,49 @@
     </div><!-- /.navbar-collapse -->
   </nav>
 
-
-  <div class="container">
-      
-      <div class="panel panel-info">
-          <div class="panel-heading">
-            <h3 class="panel-title">Login</h3>
-          </div>
-          <div class="panel-body">
-              <form class="form" #form="ngForm" (submit)="submitForm(form)">   <!--  Form start  -->
-                <div class="form-group" [class.has-error]="Name.invalid && Name.touched">
-                  <label for="uname" class="control-label">User Name:</label>
-                  <input  class="form-control" 
-                          type="text" 
-                          id="uname" 
-                          name="uName" 
-                          [(ngModel)]="myModel.uName" 
-                          #Name="ngModel"
-                  required/>
-
-                  <div class="alert alert-danger" *ngIf="Name.invalid && Name.touched">Please enter User name </div>
+  <div class="container-fluid">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Login</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form" #form="ngForm" (submit)="submitForm(form)">   <!--  Form start  -->
+              <div class="form-group" [class.has-error]="Name.invalid && Name.touched">
+                <label for="uname" class="control-label">User Name:</label>
+                <input  class="form-control" 
+                        type="text" 
+                        id="uname" 
+                        name="uName" 
+                        [(ngModel)]="myModel.uName" 
+                        #Name="ngModel"
+                required/>
+                <div class="alert alert-danger" *ngIf="Name.invalid && Name.touched">Please enter User name </div>
+              </div>
+            <!-- <br><br> -->
+              <div class="form-group" [class.has-error]="Pass.invalid && Pass.touched">
+                <label for="upass"  class="control-label">Password:</label>
+                <input  class="form-control" 
+                        type="text" 
+                        id="upass" 
+                        name="uPass" 
+                        minlength="8" 
+                        [(ngModel)]="myModel.uPass" 
+                        #Pass="ngModel" 
+                required/>
+                <div class="alert alert-danger" *ngIf="Pass.invalid && Pass.touched">
+                  Password should be 8 character long 
                 </div>
-              <!-- <br><br> -->
-                <div class="form-group" [class.has-error]="Pass.invalid && Pass.touched">
-                  <label for="upass"  class="control-label">Password:</label>
-                  <input  class="form-control" 
-                          type="text" 
-                          id="upass" 
-                          name="uPass" 
-                          minlength="8" 
-                          [(ngModel)]="myModel.uPass" 
-                          #Pass="ngModel" 
-                  required/>
-                  <div class="alert alert-danger" *ngIf="Pass.invalid && Pass.touched">
-                    Password should be 8 character long 
-                  </div>
-
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-offset-1">
+                  <button class="form-control" type="submit" class="btn btn-success">Submit</button>
+                  &nbsp; &nbsp;
+                  <button class="form-control" type="reset" class="btn btn-dark">Reset</button>
                 </div>
-              <!-- <br><br> -->
-              
-              
-
-
-                <div class="form-group row">
-                  <div class="col-sm-offset-1">
-                    <button class="form-control" type="submit" class="btn btn-success">Submit</button>
-                    &nbsp; &nbsp;
-                    <button class="form-control" type="reset" class="btn btn-dark">Reset</button>
-                  </div>
-                </div>
-                                 
-              </form>
-          </div>
-      </div>
-      
+              </div>
+            </form>
+        </div>
+    </div>
   </div>
-  
 </div>
 

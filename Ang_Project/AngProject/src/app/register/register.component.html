@@ -34,9 +34,9 @@
         <h3 class="panel-title">Registration</h3>
       </div>
       <div class="panel-body">
-        <form class="form">    <!--  <<<<<<<<<<<<<<<<<<<Form Started Here      -->
+        <form class="form" #form="ngForm" (submit)="regUser(form)">    <!--  <<<<<<<<<<<<<<<<<<<Form Started Here      -->
         
-          <div class="form-group">
+          <div class="form-group" [class.has-error]="Name.invalid && Name.touched">
             <label for="name" class="control-label">Name:</label>
             <input  type="text"
                     id = "name"
@@ -45,18 +45,25 @@
                     [(ngModel)]="myModel.name"
                     #Name = "ngModel"
             required />
+            <div class="alert alert-danger" *ngIf="Name.invalid && Name.touched">
+              Please enter Name.
+            </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" [class.has-error]="Mail.invalid && Mail.touched">
             <label for="mail" class="control-label">Email:</label>
             <input  type="text"
                     id = "mail"
                     name = "mail"
                     class="form-control"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
                     [(ngModel)]="myModel.mail"
                     #Mail = "ngModel"
             required />
+            <div class="alert alert-danger" *ngIf="Mail.invalid && Mail.touched">
+              Email id is not valid.
+            </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" [class.has-error]="Pass.invalid && Pass.touched">
             <label for="password" class="control-label">Password:</label>
             <input  type="text"
                     id = "password"
@@ -66,40 +73,14 @@
                     [(ngModel)]="myModel.password"
                     #Pass = "ngModel"
             required />
-          </div>
-          <div class="checkbox">
-            <label>
-              <input  type="checkbox" 
-                      name="fulltime"
-                      [(ngModel)]="myModel.fulltime"
-                />
-              Fulltime
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input  type="radio" 
-                      name="gender" 
-                      id="genderM"
-                      value="male" 
-                      checked="checked" 
-                      [(ngModel)]="myModel.gender"
-                />
-              Male
-              glyphiconma
-            </label>&nbsp; &nbsp;
-            <label>
-              <input  type="radio" 
-                      name="gender" 
-                      id="genderF" 
-                      value="female"
-                      [(ngModel)]="myModel.gender"
-                />
-              Female
-              <i class="fas fa-female "></i>
-            </label>
+            <div class="alert alert-danger" *ngIf="Pass.invalid && Pass.touched">
+              Password should be minimum 8 character long.
+            </div>
           </div>
 
+          
+          <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+          <button type="reset" class="btn btn-light">Reset</button>
         </form>
       </div>
   </div>
