@@ -67,45 +67,37 @@
                     #Pass = "ngModel"
             required />
           </div>
-          <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input  class="form-control" 
-                        type="checkbox" 
-                        name="fulltime"
-                        [(ngModel)]="myModel.fulltime"
-                 />
-                Fulltime
-              </label>
-            </div>
+          <div class="checkbox">
+            <label>
+              <input  type="checkbox" 
+                      name="fulltime"
+                      [(ngModel)]="myModel.fulltime"
+                />
+              Fulltime
+            </label>
           </div>
-          <div class="form-group">
-            <div class="radio">
-              <label>
-                <input  type="radio" 
-                        name="gender" 
-                        id="genderM" 
-                        class="form-control" 
-                        value="male" 
-                        checked="checked" 
-                        [(ngModel)]="myModel.gender"
-                 />
-                 Male
-                <i class="fa fa-male" aria-hidden="true"></i>
-              </label>
-              <label class="form-control" >
-                <input  type="radio" 
-                        name="gender" 
-                        id="genderM" 
-                        value="male" 
-                        checked="checked" 
-                        [(ngModel)]="myModel.gender"
-                 />
-                Female
-                <i class="fas fa-female "></i>
-              </label>
-            </div>
-            
+          <div class="radio">
+            <label>
+              <input  type="radio" 
+                      name="gender" 
+                      id="genderM"
+                      value="male" 
+                      checked="checked" 
+                      [(ngModel)]="myModel.gender"
+                />
+              Male
+              glyphiconma
+            </label>&nbsp; &nbsp;
+            <label>
+              <input  type="radio" 
+                      name="gender" 
+                      id="genderF" 
+                      value="female"
+                      [(ngModel)]="myModel.gender"
+                />
+              Female
+              <i class="fas fa-female "></i>
+            </label>
           </div>
 
         </form>
