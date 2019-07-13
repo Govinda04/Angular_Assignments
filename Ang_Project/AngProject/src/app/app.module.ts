@@ -26,7 +26,6 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
-      {path: '#', component: HomeComponent},
       {path: 'user', component: UserComponent},
       {path: 'github', component: GithubComponent},
       {path: 'login', component: LoginComponent},
