@@ -10,7 +10,7 @@
       </button>
       <a class="navbar-brand active" [routerLink]="['/home']" >
         <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-        <b>CMS</b>s
+        <b>CMS</b>
       </a>          
     </div>
   
@@ -34,14 +34,14 @@
           <h3 class="panel-title">Login</h3>
         </div>
         <div class="panel-body">
-            <form class="form" #form="ngForm" (submit)="submitForm(form)">   <!--  Form start  -->
+            <form class="form" #form="ngForm" (submit)="submitLoginForm(form)">   <!--  Form start  -->
               <div class="form-group" [class.has-error]="Name.invalid && Name.touched">
                 <label for="uname" class="control-label">User Name:</label>
                 <input  class="form-control" 
                         type="text" 
                         id="uname" 
-                        name="uName" 
-                        [(ngModel)]="myModel.uName" 
+                        name="mail" 
+                        [(ngModel)]="myModel.mail" 
                         #Name="ngModel"
                 required/>
                 <div class="alert alert-danger" *ngIf="Name.invalid && Name.touched">Please enter User name </div>
@@ -52,9 +52,9 @@
                 <input  class="form-control" 
                         type="text" 
                         id="upass" 
-                        name="uPass" 
+                        name="password" 
                         minlength="8" 
-                        [(ngModel)]="myModel.uPass" 
+                        [(ngModel)]="myModel.password" 
                         #Pass="ngModel" 
                 required/>
                 <div class="alert alert-danger" *ngIf="Pass.invalid && Pass.touched">

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -10,6 +11,9 @@ import { NotFoundComponent } from './shared/notFound.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisterService } from './services/register.service';
+import { LoginService } from './services/login.service';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
@@ -35,7 +40,10 @@ import { RegisterComponent } from './register/register.component';
 
     ])
   ],
-  providers: [],
+  providers: [
+    RegisterService,
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

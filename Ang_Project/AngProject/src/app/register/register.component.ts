@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModal } from './user.modal';
 import { NgForm } from '@angular/forms';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +12,14 @@ export class RegisterComponent implements OnInit {
 
   myModel = new UserModal('', '', '');
 
-  constructor() { }
+  constructor( private registerService: RegisterService) { }
 
   ngOnInit() {
   }
 
   regUser(form: NgForm) {
-    console.log('>>>>>User Regisration Captured', form.value);
+    // console.log('>>>>>User Regisration Captured', form.value);
+    this.registerService.registerUser(form.value);
   }
 
 }

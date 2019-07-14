@@ -53,10 +53,10 @@
             <label for="mail" class="control-label">Email:</label>
             <input  type="text"
                     id = "mail"
-                    name = "mail"
+                    name = "email"
                     class="form-control"
                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                    [(ngModel)]="myModel.mail"
+                    [(ngModel)]="myModel.email"
                     #Mail = "ngModel"
             required />
             <div class="alert alert-danger" *ngIf="Mail.invalid && Mail.touched">
@@ -80,7 +80,7 @@
 
           
           <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
-          <button type="reset" class="btn btn-light">Reset</button>
+          <button type="reset" class="btn btn-dark">Reset</button>
         </form>
       </div>
   </div>
