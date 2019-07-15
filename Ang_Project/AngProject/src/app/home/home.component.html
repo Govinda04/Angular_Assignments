@@ -38,10 +38,10 @@
               <div class="form-group" [class.has-error]="Name.invalid && Name.touched">
                 <label for="uname" class="control-label">User Name:</label>
                 <input  class="form-control" 
-                        type="text" 
+                        type="email" 
                         id="uname" 
-                        name="mail" 
-                        [(ngModel)]="myModel.mail" 
+                        name="email" 
+                        [(ngModel)]="loginModel.email" 
                         #Name="ngModel"
                 required/>
                 <div class="alert alert-danger" *ngIf="Name.invalid && Name.touched">Please enter User name </div>
@@ -50,11 +50,11 @@
               <div class="form-group" [class.has-error]="Pass.invalid && Pass.touched">
                 <label for="upass"  class="control-label">Password:</label>
                 <input  class="form-control" 
-                        type="text" 
+                        type="password" 
                         id="upass" 
                         name="password" 
                         minlength="8" 
-                        [(ngModel)]="myModel.password" 
+                        [(ngModel)]="loginModel.password" 
                         #Pass="ngModel" 
                 required/>
                 <div class="alert alert-danger" *ngIf="Pass.invalid && Pass.touched">

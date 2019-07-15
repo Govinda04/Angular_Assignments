@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './services/register.service';
 import { LoginService } from './services/login.service';
-
+import { LoginServiceA } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { LoginService } from './services/login.service';
   ],
   providers: [
     RegisterService,
-    LoginService
+    LoginService,
+    LoginServiceA
   ],
   bootstrap: [AppComponent]
 })
