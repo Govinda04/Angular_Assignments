@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './services/register.service';
 import { LoginService } from './services/login.service';
 import { LoginServiceA } from './login/login.service';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginServiceA } from './login/login.service';
     GithubComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
