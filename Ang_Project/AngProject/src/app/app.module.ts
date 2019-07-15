@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './services/register.service';
 import { LoginService } from './services/login.service';
+import { ContactService } from './services/contact.service';
 import { LoginServiceA } from './login/login.service';
 import { ContactComponent } from './contact/contact.component';
 
@@ -45,7 +46,8 @@ import { ContactComponent } from './contact/contact.component';
   providers: [
     RegisterService,
     LoginService,
-    LoginServiceA
+    LoginServiceA,
+    ContactService
   ],
   bootstrap: [AppComponent]
 })
