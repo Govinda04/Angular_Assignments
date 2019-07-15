@@ -29,9 +29,7 @@ export class HomeComponent implements OnInit {
   validateUser(typeOfUser) {
     localStorage.setItem('ROLE_TYPE', typeOfUser);
     
-    (typeOfUser == 'admin' ? )
-
-      this.router.navigate(['/user']);
+    (typeOfUser === 'admin') ? this.router.navigate(['/github']) : this.router.navigate(['/user']);
   }
 
 }
