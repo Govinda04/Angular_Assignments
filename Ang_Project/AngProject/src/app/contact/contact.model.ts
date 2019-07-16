@@ -1,7 +1,6 @@
-export class ContactModel {
-    constructor(
-        public name: string,
-        public email: string,
-        public password: string
-    ) {}
+export interface ContactModel {
+        name: string;
+        mobile: string;
+        work: string;
+        email: string;
 }

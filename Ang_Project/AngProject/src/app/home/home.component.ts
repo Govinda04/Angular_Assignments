@@ -20,15 +20,16 @@ export class HomeComponent implements OnInit {
 
   submitLoginForm(form: NgForm) {
     console.log('ting~~~~~');
+    console.log('hi');
     // console.log('>>>>>Data Caught!!!<<<<<', form.value);
     this.loginService.loginUser(form.value)
-            .subscribe((res) => this.loginService.getUserRole(res['token'])
-            .subscribe((resp) => this.validateUser(resp['role'])));
-    }
+      .subscribe((res) => this.loginService.getUserRole(res['token'])
+      .subscribe((resp) => this.validateUser(resp['role'])));
+  }
 
   validateUser(typeOfUser) {
     localStorage.setItem('ROLE_TYPE', typeOfUser);
-    
+
     (typeOfUser === 'admin') ? this.router.navigate(['/github']) : this.router.navigate(['/user']);
   }
 

@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnChanges {
 
   user = localStorage.getItem('ROLE_TYPE');
   constructor() { }
@@ -13,6 +13,9 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+  ngOnChanges() {
+    console.log('>>>>>inside onchanges');
+    // this.starWidth = this.rating * 86 / 5;
+}
 
 }

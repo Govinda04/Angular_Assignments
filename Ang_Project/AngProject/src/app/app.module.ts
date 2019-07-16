@@ -38,6 +38,7 @@ import { ContactComponent } from './contact/contact.component';
       {path: 'github', component: GithubComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
+      {path: 'contact', component: ContactComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', component: NotFoundComponent},
 
