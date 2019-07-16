@@ -23,8 +23,8 @@ export class ContactComponent implements OnInit {
   }
   
   submitForm(form: NgForm) {
-    this.contactService.showList();
     this.contactService.AddContact(form.value);
+    this.contactService.showList();
   }
 
 
