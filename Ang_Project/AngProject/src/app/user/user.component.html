@@ -41,7 +41,11 @@
             <h2 class="panel-title">Contact List of {{user}}</h2>
           </div>
           <div class="panel-body">
-            <table class="table table-hover">
+            <a class="btn btn-primary" [routerLink]="['/contact']" route>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              Add New Contact
+            </a>
+            <table class="table table-hover" *ngIf="contact && contact.length; else noData">
               <thead>
                 <tr class="center">
                   <th>Name</th>
@@ -52,26 +56,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Lorem ipsum</td>
-                  <td>9012345678</td>
-                  <td>9876543210</td>
-                  <td>lorem@test.com</td>
-                  <td><i class="fas fa-edit fa-lg btn"></i></td>
-                </tr>
-                <tr>
-                  <td>Lorem ipsum</td>
-                  <td>9012345678</td>
-                  <td>9876543210</td>
-                  <td>lorem@test.com</td>
-                  <td><i class="fas fa-edit fa-lg btn"></i></td>
-                </tr>
-                <tr>
-                  <td>Lorem ipsum</td>
-                  <td>9012345678</td>
-                  <td>9876543210</td>
-                  <td>lorem@test.com</td>
-                  <td><i class="fas fa-edit fa-lg btn"></i></td>
+                <tr *ngFor="let cont of contact">
+                  <td>{{cont.name}}</td>
+                  <td>{{cont.mobile}}</td>
+                  <td>{{cont.work}}</td>
+                  <td>{{cont.email}}</td>
+                  <td><i class="fas fa-edit fa-lg btn"></i>
+                  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                  </td>
                 </tr>
               </tbody>
             </table>

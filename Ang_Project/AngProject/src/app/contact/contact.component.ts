@@ -3,6 +3,7 @@ import { ContactModel } from './contact.model';
 import { ContactModal } from './contact.modal';
 import { ContactService } from '../services/contact.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -15,16 +16,16 @@ export class ContactComponent implements OnInit {
   contacts: ContactModel[];
   myModel = new ContactModal('Rohit', '12', '45', 'rs.in');
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService, private router: Router) {}
 
   ngOnInit() {
-    this.contactService.showList();
-    
+
   }
   
-  submitForm(form: NgForm) {
+  submitForm(form: NgForm): void {
     this.contactService.AddContact(form.value);
     this.contactService.showList();
+    this.router.navigate(['/user']);
   }
 
 

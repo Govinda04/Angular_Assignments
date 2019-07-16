@@ -1,4 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
+import { ContactModel } from '../contact/contact.model';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-user',
@@ -8,9 +10,12 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 export class UserComponent implements OnInit, OnChanges {
 
   user = localStorage.getItem('ROLE_TYPE');
-  constructor() { }
+  contact: ContactModel[];
+
+  constructor(private contactService:ContactService) { }
 
   ngOnInit() {
+    this.contact = this.contactService.getContacts();
   }
 
   ngOnChanges() {
