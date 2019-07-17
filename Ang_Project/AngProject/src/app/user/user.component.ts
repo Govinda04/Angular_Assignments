@@ -9,7 +9,8 @@ import { ContactService } from '../services/contact.service';
 })
 export class UserComponent implements OnInit, OnChanges {
 
-  user = localStorage.getItem('ROLE_TYPE');
+  user = localStorage.getItem('USER_NAME');
+  userRole = localStorage.getItem('ROLE_TYPE');
   contact: ContactModel[];
 
   constructor(private contactService:ContactService) { }

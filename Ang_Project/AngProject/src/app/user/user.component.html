@@ -37,10 +37,11 @@
     <!-- -------------Contact list------------------- -->
     <div class="container">  
       <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Contact List of {{user}}</h2>
-          </div>
-          <div class="panel-body">
+        <div class="panel-heading">
+          <h2 class="panel-title">Contact List of {{user}}</h2>
+        </div>
+        <div class="panel-body">
+          <div class="container" *ngIf="userRole === 'user'">
             <a class="btn btn-primary" [routerLink]="['/contact']" route>
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
               Add New Contact
@@ -62,11 +63,22 @@
                   <td>{{cont.work}}</td>
                   <td>{{cont.email}}</td>
                   <td><i class="fas fa-edit fa-lg btn"></i>
-                  <!-- <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> -->
+                    <!-- <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> -->
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
+
+          <!-- --------------Panel for Admin------------ -->
+          <div class="container"  *ngIf="userRole === 'admin'">
+            <h2>Welcome Admin {{user}}</h2>
+            <h3>You have access to add users.</h3>
+            <a class="btn btn-info" [routerLink]="['/register']">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              Add New User
+            </a>
+          </div>
+        </div>
       </div>
     </div>

@@ -24,13 +24,15 @@ export class HomeComponent implements OnInit {
     // console.log('>>>>>Data Caught!!!<<<<<', form.value);
     this.loginService.loginUser(form.value)
       .subscribe((res) => this.loginService.getUserRole(res['token'])
-      .subscribe((resp) => this.validateUser(resp['role'])));
+      .subscribe((resp) => this.validateUser(resp)));
   }
 
   validateUser(typeOfUser) {
-    localStorage.setItem('ROLE_TYPE', typeOfUser);
+    console.log(typeOfUser)
+    localStorage.setItem('ROLE_TYPE', typeOfUser['role']);
+    localStorage.setItem('USER_NAME', typeOfUser['name']);
 
-    (typeOfUser === 'admin') ? this.router.navigate(['/github']) : this.router.navigate(['/user']);
+    (typeOfUser['role'] === 'admin') ? this.router.navigate(['/register']) : this.router.navigate(['/user']);
   }
 
 }

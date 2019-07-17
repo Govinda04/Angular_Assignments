@@ -29,7 +29,7 @@
   </nav>
 
 
-  <div class="panel panel-warning">
+  <div class="panel panel-warning" *ngIf="isAdmin">
       <div class="panel-heading">
         <h3 class="panel-title">Registration</h3>
       </div>
@@ -84,5 +84,17 @@
         </form>
       </div>
   </div>
+
+  
+  <div class="jumbotron" *ngIf ="!isAdmin">
+    <div class="container">
+      <h1>You are Not Admin</h1>
+      <p>Only Admin can add or register new user if you are admin please Login with ADMIN ID</p>
+      <p>
+        <a class="btn btn-primary btn-lg" [routerLink]="['/home']">GO TO LOGIN</a>
+      </p>
+    </div>
+  </div>
+  
   
 </div>
