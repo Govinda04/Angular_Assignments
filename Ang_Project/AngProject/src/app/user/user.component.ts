@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ContactModel } from '../contact/contact.model';
 import { ContactService } from '../services/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +14,7 @@ export class UserComponent implements OnInit, OnChanges {
   userRole = localStorage.getItem('ROLE_TYPE');
   contact: ContactModel[];
 
-  constructor(private contactService:ContactService) { }
+  constructor(private contactService:ContactService, private router: Router) { }
 
   ngOnInit() {
     this.contact = this.contactService.getContacts();
@@ -22,6 +23,14 @@ export class UserComponent implements OnInit, OnChanges {
   ngOnChanges() {
     console.log('>>>>>inside onchanges');
     // this.starWidth = this.rating * 86 / 5;
-}
+  }
+
+  logOut() {
+    localStorage.removeItem('USER_NAME');
+    localStorage.removeItem('ROLE_TYPE');
+    localStorage.removeItem('TOKEN_NUMBER');
+    this.router.navigate(['/home']);
+
+  }
 
 }

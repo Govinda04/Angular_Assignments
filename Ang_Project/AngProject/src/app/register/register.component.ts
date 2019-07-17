@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit, OnChanges {
   userRole = localStorage.getItem('ROLE_TYPE');
   isAdmin: boolean = false;
   constructor( private registerService: RegisterService) {}
+
+  ngOnInit(){}
   
   ngOnChanges() {
     this.isAdmin = (this.userRole === 'admin') ? true : false;

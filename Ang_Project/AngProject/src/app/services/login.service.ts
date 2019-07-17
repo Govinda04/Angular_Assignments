@@ -24,5 +24,7 @@ export class LoginService {
         localStorage.setItem('TOKEN_NUMBER', token);
         return this.http.get(this.userInfo, {headers: {'x-access-token': token}});
     }
+
+    
 }
 
